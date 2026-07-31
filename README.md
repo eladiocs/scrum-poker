@@ -15,7 +15,8 @@ Component** (`<scrum-poker>`) in TypeScript, built once in Vue and consumable fr
 | `selected-button` (attribute) | `string` | Preselected value on mount. Default: `"1"`. Valid values: `1, 2, 3, 5, 8, 13`. |
 | `estimate-selected` (event) | `CustomEvent<string>` | Fired whenever the user picks a value. The chosen value is in `event.detail`. |
 
-## Installation
+
+### Installation
 
 ```sh
 npm install scrum-poker (or pnpm)
