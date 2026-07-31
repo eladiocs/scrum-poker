@@ -52,6 +52,11 @@ function onEstimateSelected(event: Event) {
 
 Replace your `App.tsx` with:
 
+> **Note:** Replace your files only if you are using a newly created project. If not, you will have to figure out how to add it in.
+
+> **Note:** Styles from files such as `index.css`, `main.css`, `base.css` can interfere with the component's styles. 
+> Remove their content if you can. If not, you will have to figure out how to make styles not collision.
+
 ```tsx
 import { useEffect, useRef, useState } from 'react'
 import 'scrum-poker'
@@ -122,6 +127,11 @@ import 'scrum-poker'
 ```
 
 Replace your `app.ts` with:
+
+> **Note:** Replace your files only if you are using a newly created project. If not, you will have to figure out how to add it in.
+
+> **Note:** Styles from files such as `index.css`, `main.css`, `base.css` can interfere with the component's styles. 
+> Remove their content if you can. If not, you will have to figure out how to make styles not collision.
 
 ```ts
 import { Component, signal, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
