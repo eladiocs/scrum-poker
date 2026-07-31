@@ -1,9 +1,7 @@
 # scrum-poker
 
 A "Scrum Poker" estimation picker component published as a **native Web
-Component** (`<scrum-poker>`), built once in Vue and consumable from any
-frontend — Vue, React, Angular, plain HTML, etc. — without rewriting the UI
-for each one.
+Component** (`<scrum-poker>`) in Typescript, built once in Vue and consumable from other frameworks (Vue, React and Angular) without rewriting the UI for each one.
 
 > Published on the public npm registry:
 > https://www.npmjs.com/package/scrum-poker
@@ -51,8 +49,8 @@ function onEstimateSelected(event: Event) {
 
 ### React
 
-> **Note:** The styles from `index.css` will interfere with the component's styles. Remove its content if you can.
-> If not, you will have to figure out how to make styles not collision.
+> **Note:** The styles from `index.css` will interfere with the component's styles. 
+> Remove its content if you can. If not, you will have to figure out how to make styles not collision.
 
 Replace your `App.tsx` with:
 > **Note:** Replace your files only if you have just created a new project. If not, you will have to figure out how to add it in.
@@ -85,9 +83,7 @@ function App() {
 export default App
 ```
 
-If you're using TypeScript, create `scrum-poker.d.ts` inside `src` and declare
-the element so it doesn't throw a type error. **The correct place to do this
-depends on your React version:**
+Create `scrum-poker.d.ts` inside `src` and declare the element so it doesn't throw a type error. **The correct place to do this depends on your React version:**
 
 - **React 19+** — the `JSX` namespace moved inside the `'react'` module, so
   augment it there:
@@ -232,6 +228,4 @@ npm run type-check
    git push && git push --tags
    ```
 
-Consumers (React/Angular/Vue projects) pick up the update by running
-`npm update scrum-poker` or `npm install scrum-poker@latest`, depending on the
-version range they pinned in their own `package.json`.
+Consumers (React/Angular/Vue projects) pick up the update by running `npm update scrum-poker` or `npm install scrum-poker@latest` (or pnpm)
