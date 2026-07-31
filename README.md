@@ -5,7 +5,7 @@ Componente "Scrum Poker" (selector de estimación) publicado como **Web Componen
 frontend — Vue, React, Angular, HTML plano, etc. — sin reescribir la UI en cada uno.
 
 > El nombre del paquete y el registry (npm público / GitHub Packages / privado)
-> todavía no están definidos. Reemplazá `scrum-poker` por el nombre real una vez
+> todavía no están definidos. Reemplaza `scrum-poker` por el nombre real una vez
 > publicado.
 
 ## Instalación
@@ -74,7 +74,7 @@ function EstimatePanel() {
 }
 ```
 
-Si usás TypeScript, declará el elemento en el JSX namespace para que no tire error de tipos:
+Si usas TypeScript, declara el elemento en el JSX namespace para que no tire error de tipos:
 
 ```ts
 declare global {
