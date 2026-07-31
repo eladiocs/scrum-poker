@@ -93,6 +93,9 @@ vue({
 
 ### React
 
+> **Note:** remove the default `#root` styles from `index.css` so they don't
+> interfere with the component's styles.
+
 React doesn't automatically translate custom DOM events into `on*` props, so
 listen for it with a `ref`. Replace your `App.tsx` with:
 
