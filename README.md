@@ -5,9 +5,8 @@ Component** (`<scrum-poker>`), built once in Vue and consumable from any
 frontend — Vue, React, Angular, plain HTML, etc. — without rewriting the UI
 for each one.
 
-> The package name and registry (public npm / GitHub Packages / private)
-> haven't been decided yet. Replace `scrum-poker` with the real name once
-> it's published.
+> Published on the public npm registry:
+> https://www.npmjs.com/package/scrum-poker
 
 ## Installation
 
@@ -151,6 +150,46 @@ npm run test:unit
 ```sh
 npm run type-check
 ```
+
+## Publishing an update
+
+1. Make the change in `ScrumPoker.vue` / `MyButton.vue` (or wherever) and commit it as usual.
+
+2. Bump the version according to [semver](https://semver.org/):
+
+   ```sh
+   npm version patch   # 0.1.0 -> 0.1.1  (fix, nothing breaks)
+   npm version minor   # 0.1.0 -> 0.2.0  (new prop/event, backwards compatible)
+   npm version major   # 0.1.0 -> 1.0.0  (breaking change, e.g. renaming an attribute/event)
+   ```
+
+   Since this is a git repo, this automatically updates `package.json`, creates a
+   commit for the new version, and creates a matching git tag — no need to edit
+   the version by hand.
+
+3. Publish:
+
+   ```sh
+   npm publish
+   ```
+
+   If your npm account has 2FA enabled, npm will prompt for the current
+   6-digit code from your authenticator app.
+
+   (`prepublishOnly` runs `build:lib` automatically, so `dist/scrum-poker.js` is
+   always rebuilt from the current source before publishing.)
+
+4. Push the commit and the tag to GitHub:
+
+   ```sh
+   git push && git push --tags
+   ```
+
+Consumers (React/Angular/Vue projects) pick up the update by running
+`npm update scrum-poker` or `npm install scrum-poker@latest`, depending on the
+version range they pinned in their own `package.json`. A `major` bump won't be
+picked up automatically — consumers need to bump it by hand, since it means
+something breaks.
 
 ## Recommended IDE setup
 
