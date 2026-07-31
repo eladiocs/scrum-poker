@@ -19,7 +19,7 @@ npm install scrum-poker
 Importing the package once registers the `<scrum-poker>` custom element in
 the browser (a side effect of the import — nothing else to call).
 
-```js
+```ts
 import 'scrum-poker'
 ```
 
@@ -39,16 +39,50 @@ Then use it as a regular HTML tag in any framework:
 ### Vue
 
 ```vue
-<script setup>
+<script setup lang="ts">
 import 'scrum-poker'
+
+function onEstimateSelected(event: Event) {
+  console.log((event as CustomEvent<string>).detail)
+}
 </script>
 
 <template>
   <scrum-poker
     selected-button="3"
-    @estimate-selected="(e) => console.log(e.detail)"
+    @estimate-selected="onEstimateSelected"
   />
 </template>
+```
+
+If you're using TypeScript, declare the element so `vue-tsc`/Volar don't
+report `Property 'scrum-poker' does not exist` in the template. Create a
+`scrum-poker.d.ts` (anywhere included by your `tsconfig.json`, e.g. `src/`):
+
+```ts
+declare module 'vue' {
+  interface GlobalComponents {
+    'scrum-poker': typeof HTMLElement
+  }
+}
+
+export {}
+```
+
+Without any extra config, Vue still renders `<scrum-poker>` correctly, but
+since it can't resolve it as a registered Vue component it logs a "failed to
+resolve component" warning in dev. To silence it, tell Vue's compiler to
+treat it as a custom element instead of trying to resolve it as a component,
+in your `vite.config.ts`:
+
+```ts
+vue({
+  template: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag === 'scrum-poker',
+    },
+  },
+})
 ```
 
 ### React
