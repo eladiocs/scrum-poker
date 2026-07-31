@@ -44,6 +44,14 @@ const numberValues = ['1', '2', '3', '5', '8', '13']
 </template>
 
 <style scoped>
+:host {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
 * {
   box-sizing: border-box;
 }
