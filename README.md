@@ -56,38 +56,73 @@ import 'scrum-poker'
 React doesn't automatically translate custom DOM events into `on*` props, so
 listen for it with a `ref`:
 
-```jsx
-import { useEffect, useRef } from 'react'
+```tsx
+import { useEffect, useRef, useState } from 'react'
 import 'scrum-poker'
 
-function EstimatePanel() {
-  const ref = useRef(null)
+function App() {
+  const ref = useRef<HTMLElement>(null)
+  const [lastEstimate, setLastEstimate] = useState<string | null>(null)
 
   useEffect(() => {
     const el = ref.current
-    const onSelect = (event) => console.log('estimate:', event.detail)
+    if (!el) return
+    const onSelect = (event: Event) => {
+      setLastEstimate((event as CustomEvent<string>).detail)
+    }
     el.addEventListener('estimate-selected', onSelect)
     return () => el.removeEventListener('estimate-selected', onSelect)
   }, [])
 
-  return <scrum-poker ref={ref} selected-button="3"></scrum-poker>
+  return (
+    <div>
+      <scrum-poker ref={ref} selected-button="3"></scrum-poker>
+      {lastEstimate && <p>React received: {lastEstimate}</p>}
+    </div>
+  )
 }
+
+export default App
 ```
 
-If you're using TypeScript, declare the element in the JSX namespace so it
-doesn't throw a type error:
+If you're using TypeScript, declare the element so it doesn't throw a type
+error. **The correct place to do this depends on your React version:**
 
-```ts
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'scrum-poker': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        'selected-button'?: string
+- **React 19+** — the `JSX` namespace moved inside the `'react'` module, so
+  augment it there:
+
+  ```ts
+  import type { DetailedHTMLProps, HTMLAttributes } from 'react'
+
+  declare module 'react' {
+    namespace JSX {
+      interface IntrinsicElements {
+        'scrum-poker': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> & {
+          'selected-button'?: string
+        }
       }
     }
   }
-}
-```
+  ```
+
+- **React 18 and earlier** — augment the global `JSX` namespace instead:
+
+  ```ts
+  declare global {
+    namespace JSX {
+      interface IntrinsicElements {
+        'scrum-poker': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+          'selected-button'?: string
+        }
+      }
+    }
+  }
+  ```
+
+Using the React 18 form (`declare global`) on React 19 compiles without error
+but silently has no effect — TypeScript will still report `Property
+'scrum-poker' does not exist on type 'JSX.IntrinsicElements'` on the JSX
+usage above.
 
 ### Angular
 
