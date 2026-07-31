@@ -54,7 +54,7 @@ import 'scrum-poker'
 ### React
 
 React doesn't automatically translate custom DOM events into `on*` props, so
-listen for it with a `ref`:
+listen for it with a `ref`. Replace your `App.tsx` with:
 
 ```tsx
 import { useEffect, useRef, useState } from 'react'
@@ -85,6 +85,7 @@ function App() {
 export default App
 ```
 
+Create `scrum-poker.d.ts`.
 If you're using TypeScript, declare the element so it doesn't throw a type
 error. **The correct place to do this depends on your React version:**
 
