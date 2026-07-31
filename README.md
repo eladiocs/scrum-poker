@@ -6,6 +6,10 @@ Component** (`<scrum-poker>`) in Typescript, built once in Vue and consumable fr
 > Published on the public npm registry:
 > https://www.npmjs.com/package/scrum-poker
 
+## Author
+
+Eladio Carmona Sánchez
+
 ## Installation
 
 ```sh
@@ -25,11 +29,13 @@ npm install scrum-poker@latest (or pnpm)
 | `selected-button` (attribute) | `string` | Preselected value on mount. Default: `"1"`. Valid values: `1, 2, 3, 5, 8, 13`. |
 | `estimate-selected` (event) | `CustomEvent<string>` | Fired whenever the user picks a value. The chosen value is in `event.detail`. |
 
+> **Note:** Replace your files only if you are using a newly created project. If not, you will have to figure out how to add it in.
+
+> **Note:** Styles from files such as `index.css`, `main.css`, `base.css` can interfere with the component's styles. 
+> Remove their content if you can. If not, you will have to figure out how to make styles not collision.
+
 ### Vue
-
-Replace App.vue with:
-> **Note:** Replace your files only if you have just created a new project. If not, you will have to figure out how to add it in.
-
+Replace your `App.vue` with:
 ```vue
 <script setup lang="ts">
 import 'scrum-poker'
@@ -49,11 +55,7 @@ function onEstimateSelected(event: Event) {
 
 ### React
 
-> **Note:** The styles from `index.css` will interfere with the component's styles. 
-> Remove its content if you can. If not, you will have to figure out how to make styles not collision.
-
 Replace your `App.tsx` with:
-> **Note:** Replace your files only if you have just created a new project. If not, you will have to figure out how to add it in.
 
 ```tsx
 import { useEffect, useRef, useState } from 'react'
@@ -118,14 +120,13 @@ Create `scrum-poker.d.ts` inside `src` and declare the element so it doesn't thr
 
 ### Angular
 
-Import the package in `main.ts`:
+Import the package in your `main.ts`:
 
 ```ts
 import 'scrum-poker'
 ```
 
-Replace `app.ts` with:
-> **Note:** Replace your files only if you have just created a new project. If not, you will have to figure out how to add it in.
+Replace your `app.ts` with:
 
 ```ts
 import { Component, signal, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -149,8 +150,7 @@ export class App {
 }
 ```
 
-Replace the default `app.html` with:
-> **Note:** Replace your files only if you have just created a new project. If not, you will have to figure out how to add it in.
+Replace your `app.html` with:
 
 ```html
 <scrum-poker selected-button="3" (estimate-selected)="onEstimate($event)"></scrum-poker>
