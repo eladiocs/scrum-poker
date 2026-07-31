@@ -6,7 +6,7 @@ Component** (`<scrum-poker>`) in TypeScript, built once in Vue and consumable fr
 > Published on the public npm registry:
 > https://www.npmjs.com/package/scrum-poker
 
-## Author
+### Author
 
 Eladio Carmona Sánchez
 
@@ -17,14 +17,7 @@ Eladio Carmona Sánchez
 | `selected-button` (attribute) | `string` | Preselected value on mount. Default: `"1"`. Valid values: `1, 2, 3, 5, 8, 13`. |
 | `estimate-selected` (event) | `CustomEvent<string>` | Fired whenever the user picks a value. The chosen value is in `event.detail`. |
 
-### Use it in your TypeScript projects Vue/React/Angular
-
-> **Note:** Replace your files only if you are using a newly created project. If not, you will have to figure out how to add it in.
-
-> **Note:** Styles from files such as `index.css`, `main.css`, `base.css` can interfere with the component's styles. 
-> Remove their content if you can. If not, you will have to figure out how to make styles not collision.
-
-### Installation
+## Installation
 
 ```sh
 npm install scrum-poker (or pnpm)
@@ -32,6 +25,11 @@ npm install scrum-poker (or pnpm)
 
 ### Vue
 Replace your `App.vue` with:
+
+> **Note:** Replace your files only if you are using a newly created project. If not, you will have to figure out how to add it in.
+
+> **Note:** Styles from files such as `index.css`, `main.css`, `base.css` can interfere with the component's styles. 
+> Remove their content if you can. If not, you will have to figure out how to make styles not collision.
 
 ```vue
 <script setup lang="ts">
