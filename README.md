@@ -29,6 +29,8 @@ npm install scrum-poker@latest (or pnpm)
 | `selected-button` (attribute) | `string` | Preselected value on mount. Default: `"1"`. Valid values: `1, 2, 3, 5, 8, 13`. |
 | `estimate-selected` (event) | `CustomEvent<string>` | Fired whenever the user picks a value. The chosen value is in `event.detail`. |
 
+
+
 > **Note:** Replace your files only if you are using a newly created project. If not, you will have to figure out how to add it in.
 
 > **Note:** Styles from files such as `index.css`, `main.css`, `base.css` can interfere with the component's styles. 
