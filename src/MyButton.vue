@@ -22,7 +22,7 @@ function selectButton() {
 
 <style scoped>
 .selection-button {
-  color: #4338ca;
+  color: #15803d;
   background: #ffffff;
   cursor: pointer;
 
@@ -33,9 +33,9 @@ function selectButton() {
   height: 76px;
   font-size: 20px;
   font-weight: 700;
-  border: 2px solid #c7d2fe;
+  border: 2px solid #bbf7d0;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(67, 56, 202, 0.08);
+  box-shadow: 0 4px 8px rgba(21, 128, 61, 0.08);
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease,
@@ -45,16 +45,16 @@ function selectButton() {
 }
 
 .selection-button:hover {
-  border-color: #818cf8;
+  border-color: #4ade80;
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(67, 56, 202, 0.2);
+  box-shadow: 0 8px 16px rgba(21, 128, 61, 0.2);
 }
 
 .selection-button.selected {
   color: #ffffff;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  border-color: #6366f1;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-color: #22c55e;
   transform: translateY(-4px);
-  box-shadow: 0 10px 18px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 10px 18px rgba(34, 197, 94, 0.35);
 }
 </style>

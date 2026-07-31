@@ -14,6 +14,12 @@ for each one.
 npm install scrum-poker
 ```
 
+To update to the latest published version:
+
+```sh
+npm install scrum-poker@latest
+```
+
 ## Usage
 
 Importing the package once registers the `<scrum-poker>` custom element in

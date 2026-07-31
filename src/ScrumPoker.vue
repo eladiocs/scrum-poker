@@ -44,14 +44,6 @@ const numberValues = ['1', '2', '3', '5', '8', '13']
 </template>
 
 <style scoped>
-:host {
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif;
-  line-height: normal;
-  letter-spacing: normal;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -69,7 +61,7 @@ const numberValues = ['1', '2', '3', '5', '8', '13']
   padding: 40px 32px;
   background: #ffffff;
   border-radius: 20px;
-  box-shadow: 0 20px 45px rgba(76, 81, 191, 0.18);
+  box-shadow: 0 20px 45px rgba(21, 128, 61, 0.18);
 }
 
 .app-header,
@@ -86,7 +78,7 @@ const numberValues = ['1', '2', '3', '5', '8', '13']
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #3730a3;
+  color: #166534;
 }
 
 .app-header-icon {
@@ -111,9 +103,9 @@ const numberValues = ['1', '2', '3', '5', '8', '13']
   font-size: 26px;
   font-weight: 700;
   color: #ffffff;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #22c55e, #16a34a);
   border-radius: 14px;
-  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 10px 20px rgba(34, 197, 94, 0.35);
 }
 
 .heading {
