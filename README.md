@@ -6,9 +6,7 @@ Component** (`<scrum-poker>`) in TypeScript, built once in Vue and consumable fr
 > Published on the public npm registry:
 > https://www.npmjs.com/package/scrum-poker
 
-### Author
-
-Eladio Carmona Sánchez
+> Author: Eladio Carmona Sánchez
 
 ### API
 
