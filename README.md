@@ -1,29 +1,30 @@
 # scrum-poker
 
-Componente "Scrum Poker" (selector de estimación) publicado como **Web Component nativo**
-(`<scrum-poker>`), construido una sola vez en Vue y consumible desde cualquier
-frontend — Vue, React, Angular, HTML plano, etc. — sin reescribir la UI en cada uno.
+A "Scrum Poker" estimation picker component published as a **native Web
+Component** (`<scrum-poker>`), built once in Vue and consumable from any
+frontend — Vue, React, Angular, plain HTML, etc. — without rewriting the UI
+for each one.
 
-> El nombre del paquete y el registry (npm público / GitHub Packages / privado)
-> todavía no están definidos. Reemplaza `scrum-poker` por el nombre real una vez
-> publicado.
+> The package name and registry (public npm / GitHub Packages / private)
+> haven't been decided yet. Replace `scrum-poker` with the real name once
+> it's published.
 
-## Instalación
+## Installation
 
 ```sh
 npm install scrum-poker
 ```
 
-## Uso
+## Usage
 
-Importar el paquete una sola vez registra el custom element `<scrum-poker>` en el
-navegador (efecto secundario del import, no hace falta llamar a nada más).
+Importing the package once registers the `<scrum-poker>` custom element in
+the browser (a side effect of the import — nothing else to call).
 
 ```js
 import 'scrum-poker'
 ```
 
-Luego se usa como una etiqueta HTML normal en cualquier framework:
+Then use it as a regular HTML tag in any framework:
 
 ```html
 <scrum-poker selected-button="3"></scrum-poker>
@@ -31,10 +32,10 @@ Luego se usa como una etiqueta HTML normal en cualquier framework:
 
 ### API
 
-| Nombre | Tipo | Descripción |
+| Name | Type | Description |
 | --- | --- | --- |
-| `selected-button` (atributo) | `string` | Valor preseleccionado al montar. Default: `"1"`. Valores válidos: `1, 2, 3, 5, 8, 13`. |
-| `estimate-selected` (evento) | `CustomEvent<string>` | Se dispara cada vez que el usuario elige un valor. El valor elegido viene en `event.detail`. |
+| `selected-button` (attribute) | `string` | Preselected value on mount. Default: `"1"`. Valid values: `1, 2, 3, 5, 8, 13`. |
+| `estimate-selected` (event) | `CustomEvent<string>` | Fired whenever the user picks a value. The chosen value is in `event.detail`. |
 
 ### Vue
 
@@ -53,8 +54,8 @@ import 'scrum-poker'
 
 ### React
 
-React no traduce automáticamente eventos custom del DOM a props `on*`, así que se
-escucha con un `ref`:
+React doesn't automatically translate custom DOM events into `on*` props, so
+listen for it with a `ref`:
 
 ```jsx
 import { useEffect, useRef } from 'react'
@@ -74,7 +75,8 @@ function EstimatePanel() {
 }
 ```
 
-Si usas TypeScript, declara el elemento en el JSX namespace para que no tire error de tipos:
+If you're using TypeScript, declare the element in the JSX namespace so it
+doesn't throw a type error:
 
 ```ts
 declare global {
@@ -90,8 +92,9 @@ declare global {
 
 ### Angular
 
-Importar el paquete una vez (por ejemplo en `main.ts`) y habilitar
-`CUSTOM_ELEMENTS_SCHEMA` en el módulo o componente standalone que use la etiqueta:
+Import the package once (for example in `main.ts`) and enable
+`CUSTOM_ELEMENTS_SCHEMA` in the module or standalone component that uses the
+tag:
 
 ```ts
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
@@ -113,25 +116,25 @@ export class EstimatePanelComponent {
 <scrum-poker selected-button="3" (estimate-selected)="onEstimate($event)"></scrum-poker>
 ```
 
-## Desarrollo local
+## Local development
 
 ```sh
 npm install
 ```
 
-### Demo con hot-reload
+### Demo with hot-reload
 
 ```sh
 npm run dev
 ```
 
-### Build de la app de demo
+### Build the demo app
 
 ```sh
 npm run build
 ```
 
-### Build del Web Component publicable (`dist/scrum-poker.js`)
+### Build the publishable Web Component (`dist/scrum-poker.js`)
 
 ```sh
 npm run build:lib
@@ -149,6 +152,6 @@ npm run test:unit
 npm run type-check
 ```
 
-## IDE recomendado
+## Recommended IDE setup
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (deshabilitar Vetur).
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (disable Vetur).
