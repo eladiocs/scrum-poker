@@ -27,10 +27,10 @@ npm install scrum-poker@latest (or pnpm)
 | `selected-button` (attribute) | `string` | Preselected value on mount. Default: `"1"`. Valid values: `1, 2, 3, 5, 8, 13`. |
 | `estimate-selected` (event) | `CustomEvent<string>` | Fired whenever the user picks a value. The chosen value is in `event.detail`. |
 
-> **Note:** Replace your files only if you have just created a new project
-
 ### Vue
+
 Replace App.vue with:
+> **Note:** Replace your files only if you have just created a new project. If not, you will have to figure out how to add it in.
 
 ```vue
 <script setup lang="ts">
@@ -51,10 +51,11 @@ function onEstimateSelected(event: Event) {
 
 ### React
 
-> **Note:** The styles from `index.css` will interfere with the component's styles. 
-> Comment out or remove the content of the `index.css` if you can.
+> **Note:** The styles from `index.css` will interfere with the component's styles. Remove its content if you can.
+> If not, you will have to figure out how to make styles not collision.
 
-Replace your `App.tsx` with (again, replace only if this is new project just created):
+Replace your `App.tsx` with:
+> **Note:** Replace your files only if you have just created a new project. If not, you will have to figure out how to add it in.
 
 ```tsx
 import { useEffect, useRef, useState } from 'react'
@@ -127,7 +128,8 @@ Import the package in `main.ts`:
 import 'scrum-poker'
 ```
 
-Replace `app.ts` with (again, if this is a brand new project):
+Replace `app.ts` with:
+> **Note:** Replace your files only if you have just created a new project. If not, you will have to figure out how to add it in.
 
 ```ts
 import { Component, signal, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -151,7 +153,8 @@ export class App {
 }
 ```
 
-Replace the default `app.html` with this (again, assuming this is a new project):
+Replace the default `app.html` with:
+> **Note:** Replace your files only if you have just created a new project. If not, you will have to figure out how to add it in.
 
 ```html
 <scrum-poker selected-button="3" (estimate-selected)="onEstimate($event)"></scrum-poker>
